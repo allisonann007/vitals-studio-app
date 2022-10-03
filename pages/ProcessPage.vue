@@ -30,7 +30,15 @@ export default {
           title: 'processThree',
           alt: 'two woman blowing glass at bench',
           src: '/assets/processThree.jpg'
-        }
+        }]
+    }
+  },
+  // Within your pages, add the head method to the script and include
+  // the hid meta line to overwrite the description on a page by page basis
+  head() {
+    return {
+      meta: [
+        {hid: 'description', name: 'description', content: 'Process Page meta data'},
       ]
     }
   }

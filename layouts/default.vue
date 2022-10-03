@@ -7,7 +7,6 @@
     <NuxtLink to="/ProcessPage">Process</NuxtLink>
     <NuxtLink to="/ShopPage">Shop</NuxtLink>
     <NuxtLink to="/CartPage">Cart</NuxtLink>
-    <NuxtLink to="/childPage">Child Page</NuxtLink>
   </nav>
   <Nuxt />
 </div>
@@ -18,6 +17,7 @@
   font-family: 'Quicksand', sans-serif;
 }
 nav {
-  font-size: 5vw;
+  font-size: 2vw;
 }
+
 </style>

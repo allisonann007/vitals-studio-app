@@ -18,9 +18,17 @@ export default {
   name: 'app',
   data() {
     return {
-
       seen: true,
       message: 'Shop'
+    }
+  },
+  // Within your pages, add the head method to the script and include
+  // the hid meta line to overwrite the description on a page by page basis
+  head() {
+    return {
+      meta: [
+        {hid: 'description', name: 'description', content: 'Shop Page meta data'},
+      ]
     }
   }
 }

@@ -14,6 +14,15 @@ data () {
 return {
 heading: 'Celebrating glassmaking at its source.'
 }
+},
+// Within your pages, add the head method to the script and include
+// the hid meta line to overwrite the description on a page by page basis
+head() {
+  return {
+    meta: [
+      {hid: 'description', name: 'description', content: 'About Page meta data'},
+    ]
+  }
 }
 }
 
