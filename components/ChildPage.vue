@@ -20,7 +20,11 @@
 // Props declaration and validation
     data() {
       return {
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 1bd8ee1ba381a8cf5fac6fe2c0698f50632129b8
       }
     },
     // These props were in the data block above, but should be their own section like this:
@@ -46,5 +50,9 @@
             default: 'Mountain Countries'
           }
     }
+<<<<<<< HEAD
   }
+=======
+  }  
+>>>>>>> 1bd8ee1ba381a8cf5fac6fe2c0698f50632129b8
 </script>
