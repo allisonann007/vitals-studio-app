@@ -1,30 +1,34 @@
+<!--Converted to Nuxt framework-->
+<!--Your site should have at least 4 pages (including the home) with <nuxt-link> used to navigate between them-->
+<!--Added routing for all pages using pages directory and <nuxt-link>-->
+<!--Created all 4 required pages-->
 <template>
-<nav>
-  <!--Converted to Nuxt framework-->
-  <!--Your site should have at least 4 pages (including the home) with <nuxt-link> used to navigate between them-->
-  <!--Added routing for all pages using pages directory and <nuxt-link>-->
-  <!--Created all 4 required pages-->
-  <NuxtLink to="/">Home</NuxtLink>
-  <NuxtLink to="/AboutPage">About</NuxtLink>
-  <NuxtLink to="/DiscoverPage">Discover</NuxtLink>
-  <NuxtLink to="/ProcessPage">Process</NuxtLink>
-  <NuxtLink to="/ShopPage">Shop</NuxtLink>
-  <NuxtLink to="/CartPage">Cart</NuxtLink>
-</nav>
+<div id="app">
+<h1> {{ welcome }}</h1>
+<img src="./../assets/home-img.jpg" width="600">
+</div>
 </template>
 
 <script>
 export default {
-  name: 'app',
+name: 'app',
+data () {
+return {
+welcome: 'Connect to the healing truth of creativity.  Discover original stories.'
+}
+}
 }
 </script>
 
 <style>
 #app {
-  font-weight: lighter;
   color: #000000;
   text-align: center;
-  font-style: 'Montserrat', sans-serif;
-  text-decoration: none;
+
+}
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+    -webkit-animation: fadein 5s;
 }
 </style>

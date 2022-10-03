@@ -1,28 +1,25 @@
 <!--Incorporate data from an API-->
 <template>
 <div>
+  <h1>Cart</h1>
+  <!-- With that returned data, build a corresponding component and use v-for to loop over the data -->
+
+  <childPage v-for="(mountain, id) in mountains"
+  :key="id" :title="mountain.title"
+  :continent="mountain.continent"
+  :height="mountain.height"
+  :countries="mountain.countries" />
+
   <p v-if="$fetchState.pending">Fetching API...</p>
   <p v-else-if="$fetchState.error">An error occurred</p>
-  <div v-else>
-    <h1>Cart</h1>
-    <!--Build a corresponding component and use v-for to loop over the data-->
-    <ul>
-      <li v-for="mountain of mountains">{{ mountain.title }}</li>
-      <li v-for="mountain of mountains">{{ mountain.continent }}</li>
-      <li v-for="mountain of mountains">{{ mountain.height }}</li>
-      <li v-for="mountain of mountains">{{ mountain.countries }}</li>
-    </ul>
-    <!--The component should have some sort of method that causes a UI interaction on that instance of the component-->
-    <!--Click first button, then hit refresh and text appears by way of built-in Vue Transition component-->
-    <button @click="show = !show">UI Interaction button</button>
-    <Transition>
-      <p v-if="show">This button has been clicked!</p>
-    </Transition>
-    <button @click="$fetch">Refresh</button>
-  </div>
+  <!--Click first button, then hit refresh and text appears by way of built-in Vue Transition component-->
+  <button @click="show = !show">UI Interaction button</button>
+  <Transition>
+    <p v-if="show">This button has been clicked!</p>
+  </Transition>
+  <button @click="$fetch">Refresh</button>
 </div>
 </template>
-
 <!--That component should have props validation as well as use at least 4 data points
 in the template itself (heading, description, image, statistics, etc).-->
 <script>
@@ -40,7 +37,6 @@ export default {
 }
 </script>
 
-<!--The component should have some sort of method that causes a UI interaction on that instance of the component-->
 <style>
 .v-enter-active,
 .v-leave-active {
