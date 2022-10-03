@@ -1,3 +1,7 @@
+// Your nuxtconfigjs file should have some metadata in it already
+// modify that to include your site's fallback (default) metadata
+// See line 20
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -11,8 +15,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      // Your nuxtconfigjs file should have some metadata in it already
-      // modify that to include your site's fallback (default) metadata
+
       { hid: 'description', name: 'description', content: '' },
       { hid: 'keywords', name: 'keywords', keywords: 'glassblowing, glass art'},
       { name: 'format-detection', content: 'telephone=no' }
