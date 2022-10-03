@@ -1,14 +1,19 @@
 <!--Incorporate data from an API-->
 <template>
-<div>
+<div class="container">
   <h1>Cart</h1>
   <!-- With that returned data, build a corresponding component and use v-for to loop over the data -->
-
+  
+  <!-- could use css grid or bootstrap grid to place these in rows -->
   <childPage v-for="(mountain, id) in mountains"
-  :key="id" :title="mountain.title"
-  :continent="mountain.continent"
-  :height="mountain.height"
-  :countries="mountain.countries" />
+    :key="id" :title="mountain.title"
+    :continent="mountain.continent"
+    :height="mountain.height"
+    :countries="mountain.countries" 
+    class="mb-2"  
+  />
+ 
+
 
   <p v-if="$fetchState.pending">Fetching API...</p>
   <p v-else-if="$fetchState.error">An error occurred</p>
@@ -23,11 +28,19 @@
 <!--That component should have props validation as well as use at least 4 data points
 in the template itself (heading, description, image, statistics, etc).-->
 <script>
+
+// The child page wasn't imported and added as a component.
+import childPage from '../components/ChildPage.vue'
+
 export default {
   data() {
     return {
-      mountains: []
+      mountains: [],
+      show: false
     }
+  },
+  components:{
+    childPage
   },
   async fetch() {
     this.mountains = await fetch(
@@ -57,4 +70,5 @@ export default {
 .fade-leave-to {
   opacity: 0;
 }
+
 </style>
